@@ -246,14 +246,26 @@ screen quick_menu():
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Назад") action Rollback()
-            textbutton _("История") action ShowMenu('history')
-            textbutton _("Пропуск") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Авто") action Preference("auto-forward", "toggle")
-            textbutton _("Сохранить") action ShowMenu('save')
-            textbutton _("Б.Сохр") action QuickSave()
-            textbutton _("Б.Загр") action QuickLoad()
-            textbutton _("Опции") action ShowMenu('preferences')
+            imagebutton:
+                idle "gui/rollback_button/idle.png"
+                hover "gui/rollback_button/hover.png"
+                insensitive "gui/rollback_button/insensitive.png"
+                action Rollback()
+                xpos -5.0
+                ypos -0.45
+
+            imagebutton:
+                idle "gui/skip_button/idle.png"
+                hover "gui/skip_button/hover.png"
+                insensitive "gui/skip_button/insensitive.png"
+                action Skip() alternate Skip(fast=True, confirm=True)
+                xpos -6.0
+                ypos -1.55
+
+            textbutton _("История") action ShowMenu('history') ypos 0.48 xpos -100
+            textbutton _("Авто") action Preference("auto-forward", "toggle") ypos 0.48 xpos -100
+            textbutton _("Сохранить") action ShowMenu('save') ypos 0.48 xpos -100
+            textbutton _("Опции") action ShowMenu('preferences') ypos 0.48 xpos -100
 
 
 ## Данный код гарантирует, что экран быстрого меню будет показан в игре в любое
