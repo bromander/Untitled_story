@@ -324,7 +324,10 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Помощь не необходима и не относится к мобильным устройствам.
-            textbutton _("Помощь") action ShowMenu("help")
+            textbutton _("Управление") action ShowMenu("help")
+
+        if main_menu:
+            textbutton _("???") action ShowMenu("sigma_masturbistor")
 
         if renpy.variant("pc"):
 
