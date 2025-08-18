@@ -2,8 +2,9 @@
 label start:
     scene bg room
 
+    $ renpy.sound.play("bg/silent_hill_2_Akira Yamaoka - A World Of Madness.mp3", channel="music", loop=True, relative_volume=0.2)
+
     j_sad "Вспоминаю те времена с моим бывшим..."
-    show j
     d "У лукоморья дуб зелёный;
 Златая цепь на дубе том:
 И днём и ночью кот учёный
@@ -37,7 +38,6 @@ label start:
 У моря видел дуб зелёный;
 Под ним сидел, и кот учёный
 Свои мне сказки говорил."
-    hide j
     j "У лукоморья дуб зелёный;
 Златая цепь на дубе том:
 И днём и ночью кот учёный
@@ -71,28 +71,9 @@ label start:
 У моря видел дуб зелёный;
 Под ним сидел, и кот учёный
 Свои мне сказки говорил."
-    show j_sad at center
-    j_sad "Вспоминаю те времена с моим бывшим..."
-    hide j_sad
-    show j_angry at center
-    j_angry "Да как он только мог?"
-    hide j_angry
-    show j at center
-    j "Эх. Как же хочеться свежего и горячего писюнчика"
-    hide j
-    show d_unknown at center
     d_unknown "я типо неизвесный инвалид"
-    hide d_unknown
-    show d_semidead at center
     d_semidead "я типо полумёртвый инвалид"
-    hide d_semidead
-    show d at center
-    d "Эх. Как же хочеться свежего и горячего писюнчика"
-    hide d
-    show d_sad at center
     d_sad "Вспоминаю те времена с моим бывшим..."
-    hide d_sad
-    show d_angry at center
     d_angry "Да как он только мог?"
 
     return
