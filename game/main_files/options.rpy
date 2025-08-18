@@ -54,8 +54,8 @@ define config.has_voice = True
 ## Чтобы разрешить игроку тестировать громкость на звуковом или голосовом
 ## каналах, раскомментируйте строчку и настройте пример звука для прослушивания.
 
-# define config.sample_sound = "sample-sound.ogg"
-# define config.sample_voice = "sample-voice.ogg"
+define config.sample_sound = "audio/sigma_masturbistor/vine-boom.mp3"
+define config.sample_voice = "audio/characters_voice/test/0_mouse.wav"
 
 
 ## Раскомментируйте следующую строчку, чтобы настроить аудиофайл, который будет
