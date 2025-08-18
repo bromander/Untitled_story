@@ -319,9 +319,12 @@ screen navigation():
 
             textbutton _("Главное меню") action MainMenu()
 
-        textbutton _("Об игре") action ShowMenu("about")
+        if main_menu:
+            textbutton _("Об игре") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+            textbutton _("Разработчики") action ShowMenu("developers")
+
+        if (renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile"))) and main_menu:
 
             ## Помощь не необходима и не относится к мобильным устройствам.
             textbutton _("Управление") action ShowMenu("help")
@@ -346,6 +349,47 @@ style navigation_button:
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
 
+
+# Экран со списком разоработчиков :3
+screen developers():
+
+    tag menu
+
+    ## Этот оператор включает игровое меню внутрь этого экрана. Дочерний vbox
+    ## включён в порт просмотра внутри экрана игрового меню.
+    use game_menu(_("Разработчики"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+            label "     [config.name!t]":
+                text_size 60
+            text _("     Версия [config.version!t]\n") size 40  xpos 35
+            label "\nХудожники:":
+                text_size 50
+
+            text _(
+            "Мясорубка - {a=https://t.me/HaPkOmmAn}Телеграм{/a}\n"
+            "BBBBANSCHOS🍀 - {a=https://t.me/bnnnschchcha}Телеграм{/a}\n"
+            "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}"
+            ) ypos 10 xpos 5
+
+            label "\nПрограммисты:":
+                text_size 50
+
+            text _(
+            "bromand - {a=https://t.me/br0mand}Телеграм{/a}"
+            ) ypos 10 xpos 5
+
+            label "\nСценаристы:":
+                text_size 50
+
+            text _(
+            "ZerOS ゼロス - {a=https://t.me/DemonTrader}Телеграм{/a}\n"
+            "BBBBANSCHOS🍀 - {a=https://t.me/bnnnschchcha}Телеграм{/a}\n"
+            "Sandra - {a=https://t.me/Sarventaa}Телеграм{/a}"
+            ) ypos 10 xpos 5
 
 ## Экран главного меню #########################################################
 ##
