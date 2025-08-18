@@ -23,7 +23,7 @@ init python:
                     # Выбираем случайный файл
                     if files:
                         file_path = f"audio/characters_voice/{character_name}/{random.choice(files)}"
-                        renpy.music.play(str(file_path).replace("\\", "/"), channel='music', loop=False)
+                        renpy.music.play(str(file_path).replace("\\", "/"), channel='voice', loop=False)
                     else:
                         print("В директории нет подходящих аудиофайлов.")
                     time.sleep(0.15)
