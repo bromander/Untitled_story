@@ -40,7 +40,7 @@ init python:
             e = 0
             renpy.invoke_in_thread(random_sounds, character_name)
         elif event == "slow_done":
-            renpy.music.stop(channel='music')
+            renpy.music.stop(channel='voice')
             i = 0
             e = 0
 
