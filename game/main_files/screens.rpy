@@ -561,8 +561,9 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
-            text _("Версия [config.version!t]\n")
+            label "     [config.name!t]":
+                text_size 60
+            text _("     Версия [config.version!t]\n") size 40  xpos 35
 
             ## gui.about обычно установлено в options.rpy.
             if gui.about:
