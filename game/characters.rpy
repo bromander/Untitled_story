@@ -11,22 +11,22 @@ init python:
     e = 0
 
     def random_sounds(character_name):
+        import time
         global i
         global e
+        # Получаем список всех файлов в директории
+        files = os.listdir(f"{str(renpy.config.basedir).replace("\\", "/")}/game/audio/characters_voice/{character_name}")
         while True:
             if i == 1:
-                if not renpy.sound.get_playing('music'):
+                if renpy.get_screen("say"):
                     e += 1
-
-                    # Получаем список всех файлов в директории
-                    files = os.listdir(f"{str(renpy.config.basedir).replace("\\", "/")}/game/audio/characters_voice/{character_name}")
-
                     # Выбираем случайный файл
                     if files:
                         file_path = f"audio/characters_voice/{character_name}/{random.choice(files)}"
                         renpy.music.play(str(file_path).replace("\\", "/"), channel='music', loop=False)
                     else:
                         print("В директории нет подходящих аудиофайлов.")
+                    time.sleep(0.15)
             else:
                 return None
 
@@ -54,7 +54,7 @@ define j_angry = Character("Джопаждек /", who_color="#D2691E", what_col
 #Дебилыч
 define d = Character("Дибилыч /", who_color="#BDB76B", what_color="#CD853F", character_name="debil", cb_character_name="debil", callback=character_sound)
 define d_unknown = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_color="#808080", what_prefix="{i}", what_suffix="{/i}", cb_character_name="debil", callback=character_sound)
-define d_semidead = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_color="#808080", what_slow_cps=10, cb_character_name="debil", callback=character_sound)
+define d_semidead = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_color="#808080", what_slow_cps=10, cb_character_name="debil_misunderstood", callback=character_sound)
 define d_sad = Character("Дибилыч /", who_color="#BDB76B", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="debil", callback=character_sound)
 define d_angry = Character("Дибилыч /", who_color="#BDB76B", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="debil", callback=character_sound)
 
