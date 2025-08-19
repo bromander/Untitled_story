@@ -714,7 +714,8 @@ screen about():
             label "     [config.name!t]":
                 text_size 60
             text _("     Версия [config.version!t]\n") size 40  xpos 35
-
+            add "sprites/jam.png" zoom 0.5
+            text "\n\n\n\n\n\n"
             ## gui.about обычно установлено в options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
