@@ -435,6 +435,11 @@ screen notes_list():
             import json
             with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
                 file_data = json.load(file_data)
+            founded = len([i for i in file_data if i in persistent.notes_counter])
+            total = len(file_data)
+
+        text "Найденно:" xalign 0.5 size 50
+        text f"{founded}/{total}\n" xalign 0.5 size 45
 
         $ notes_len = len(file_data)
         grid 2 notes_len//2:
