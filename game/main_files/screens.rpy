@@ -289,9 +289,54 @@ style quick_button:
 style quick_button_text:
     properties gui.text_properties("quick_button")
 
+################################################################################
+## Экран записьки
+################################################################################
+
+
+screen show_note(note_name):
+    key "mouseup_1" action Hide("show_note")
+    key "K_ESCAPE" action Hide("show_note")
+    zorder 50
+    python:
+        import json
+        with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
+            file_data = json.load(file_data)
+            _text = "\n" + file_data[note_name]["text"]
+            _colour = file_data[note_name]["colour"]
+    frame:
+        align (0.8, 0.5)
+        background "images/sprites/note_button/noteBG.png"
+        fixed
+        xysize (600, 1000)
+
+
+        text _text color _colour:
+            size 25
+            xmaximum 600
+            ymaximum 1000
+
+
+
+
+
+init:
+    transform note_zoomed:
+        zoom 5.0
+
+screen note(note_name):
+    imagebutton:
+        idle "sprites/note_button/idle.png"
+        hover "sprites/note_button/hover.png"
+        xalign 0.2 yalign 0.5
+        at note_zoomed
+        focus_mask True
+        action Show("show_note", note_name=note_name)
+
+
 
 ################################################################################
-## Экраны Главного и Игрового меню
+## Экраны Главного, Игрового меню и меню разработчиков
 ################################################################################
 
 ## Экран навигации #############################################################
@@ -320,6 +365,22 @@ screen navigation():
             textbutton _("Сохранить") action ShowMenu("save")
 
         textbutton _("Загрузить") action ShowMenu("load")
+
+        python:
+            if not hasattr(persistent, "notes_counter"):
+                persistent.notes_counter = []
+            if persistent.notes_counter == None:
+                    persistent.notes_counter = []
+
+            persistent.notes_counter = ["note1", "note2", "note3", "note4"]
+
+            if persistent.notes_counter:
+                is_notes_counter = True
+            else:
+                is_notes_counter = False
+
+        if is_notes_counter:
+            textbutton _("Записки") action ShowMenu("notes_list")
 
         textbutton _("Настройки") action ShowMenu("preferences")
 
@@ -360,6 +421,39 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+
+## Экран записок
+
+init:
+    transform note_view_zoomed:
+        zoom 1.0
+
+screen notes_list():
+    tag menu
+    use game_menu(_("Найденные записки"), scroll="viewport"):
+        python:
+            import json
+            with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
+                file_data = json.load(file_data)
+
+        $ notes_len = len(file_data)
+        grid 2 notes_len//2:
+            spacing 100
+            for e, i in enumerate(range(notes_len)):
+                $ _note_name = file_data[f"note{e+1}"]["note_name"]
+                if f"note{e+1}" in persistent.notes_counter:
+                    textbutton _note_name:
+                        text_size 50
+                        text_align 0.5
+                        idle_background At("gui/button/slot_idle_background.png", note_view_zoomed)
+                        hover_background At("gui/button/slot_hover_background.png", note_view_zoomed)
+                        focus_mask True
+                        action Show("show_note", note_name=f"note{e+1}")
+                        xpadding 50
+                        ypadding 50
+
+
+
 
 
 # Экран со списком разоработчиков :3

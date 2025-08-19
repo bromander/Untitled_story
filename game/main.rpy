@@ -1,11 +1,13 @@
 ﻿
 label start:
+    $ renpy.sound.play("bg/silent_hill_2_Akira Yamaoka - A World Of Madness.mp3", channel="music", loop=True, relative_volume=0.1)
     scene bg room
+    show screen note("note2")
 
-    $ renpy.sound.play("bg/silent_hill_2_Akira Yamaoka - A World Of Madness.mp3", channel="music", loop=True, relative_volume=0.2)
+
 
     j_sad "Вспоминаю те времена с моим бывшим..."
-    d "У лукоморья дуб зелёный;
+    j "У лукоморья дуб зелёный;
 Златая цепь на дубе том:
 И днём и ночью кот учёный
 Всё ходит по цепи кругом;
