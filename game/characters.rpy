@@ -1,6 +1,7 @@
 #Здесь создаются все персонажи и их спрайты
 
 init python:
+    from pathlib import Path
     import os
     import random
     import renpy.exports as renpy_exports
@@ -14,10 +15,10 @@ init python:
         import time
         global i
         global e
-        # Получаем список всех файлов в директории
-        # Здесь была RONY, она чуть-чуть редачнула строчку ниже, а то на этом куске у неё вылетала ошибка
-        # files = os.listdir(f"{str(renpy.config.basedir).replace("\\", "/")}/game/audio/characters_voice/{character_name}")
-        files = os.listdir(f"{str(renpy.config.basedir)}/game/audio/characters_voice/{character_name}")
+
+        base = Path(renpy.config.basedir)
+        path = base / "game" / "audio" / f"characters_voice/{character_name}"
+        files = os.listdir(path)
         while True:
             if i == 1:
                 if renpy.get_screen("say"):
@@ -46,10 +47,14 @@ init python:
             i = 0
             e = 0
 
+style centered_text:
+    yalign 0.5
+
 #     Персонажи
-# Персонажи:
-define none_character = Character('')
+define narrator = Character(None, kind=nvl, what_color="#FFFFFF", what_style='centered_text') #Текст по середине экрана
+define narrator_small = Character(None, what_color="#FFFFFF", what_style='centered_text') #Текст внизу экрана (как обычный персонаж)
 define j = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa")
+define j_fast = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa", what_slow_cps=50)
 define j_sad = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="jopa", callback=character_sound)
 define j_angry = Character("Джопаждек /", who_color="#D2691E", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="jopa", callback=character_sound)
 
@@ -60,13 +65,21 @@ define d_semidead = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_
 define d_sad = Character("Дибилыч /", who_color="#BDB76B", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="debil", callback=character_sound)
 define d_angry = Character("Дибилыч /", who_color="#BDB76B", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="debil", callback=character_sound)
 
+#Телек
 define talking_head = Character("Бошечка из телека", who_color = "#808080", what_color="#808080")
 
 #     Спрайты
 #джек
 image j = im.FactorScale("sprites/characters/jopa/jopa.png", 8)
+image j_jacket = im.FactorScale("sprites/characters/jopa/jopa_jacket.png", 8)
+image j_jacket_calling = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling.png", 8)
+image j_jacket_calling_sweat = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling_sweat.png", 8)
+image j_jacket_calling_sweat_very = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling_sweat_very.png", 8)
+image j_jacket_calling_evil = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling_evil.png", 8)
+image j_jacket_scared = im.FactorScale("sprites/characters/jopa/jopa_jacket_scared.png", 8)
 image j_sad = im.FactorScale("sprites/characters/jopa/jopa_sad.png", 8)
 image j_angry = im.FactorScale("sprites/characters/jopa/jopa_angry.png", 8)
+image j_falling = im.FactorScale("sprites/characters/jopa/jopa_falling.png", 8)
 
 #Дебилыч
 image d = im.FactorScale("sprites/characters/debil/debil.png", 8)
