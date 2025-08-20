@@ -1,5 +1,8 @@
 ﻿
 label start:
+
+    jump rony_test
+
     $ renpy.sound.play("bg/silent_hill_2_Akira Yamaoka - A World Of Madness.mp3", channel="music", loop=True, relative_volume=0.1)
     scene bg room
     show screen note("note2")

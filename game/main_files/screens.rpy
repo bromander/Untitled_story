@@ -300,10 +300,10 @@ screen show_note(note_name):
     zorder 50
     python:
         import json
-        with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
-            file_data = json.load(file_data)
-            _text = "\n" + file_data[note_name]["text"]
-            _colour = file_data[note_name]["colour"]
+        # with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
+        #     file_data = json.load(file_data)
+        #     _text = "\n" + file_data[note_name]["text"]
+        #     _colour = file_data[note_name]["colour"]
     frame:
         align (0.8, 0.5)
         background "images/sprites/note_button/noteBG.png"
@@ -433,10 +433,10 @@ screen notes_list():
     use game_menu(_("Найденные записки"), scroll="viewport"):
         python:
             import json
-            with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
-                file_data = json.load(file_data)
-            founded = len([i for i in file_data if i in persistent.notes_counter])
-            total = len(file_data)
+            # with open(f"{str(renpy.config.basedir).replace("\\", "/")}/game/notes.json") as file_data:
+            #     file_data = json.load(file_data)
+            # founded = len([i for i in file_data if i in persistent.notes_counter])
+            # total = len(file_data)
 
         text "Найденно:" xalign 0.5 size 50
         text f"{founded}/{total}\n" xalign 0.5 size 45

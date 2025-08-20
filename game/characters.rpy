@@ -15,7 +15,9 @@ init python:
         global i
         global e
         # Получаем список всех файлов в директории
-        files = os.listdir(f"{str(renpy.config.basedir).replace("\\", "/")}/game/audio/characters_voice/{character_name}")
+        # Здесь была RONY, она чуть-чуть редачнула строчку ниже, а то на этом куске у неё вылетала ошибка
+        # files = os.listdir(f"{str(renpy.config.basedir).replace("\\", "/")}/game/audio/characters_voice/{character_name}")
+        files = os.listdir(f"{str(renpy.config.basedir)}/game/audio/characters_voice/{character_name}")
         while True:
             if i == 1:
                 if renpy.get_screen("say"):
@@ -57,6 +59,8 @@ define d_unknown = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_c
 define d_semidead = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_color="#808080", what_slow_cps=10, cb_character_name="debil_misunderstood", callback=character_sound)
 define d_sad = Character("Дибилыч /", who_color="#BDB76B", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="debil", callback=character_sound)
 define d_angry = Character("Дибилыч /", who_color="#BDB76B", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="debil", callback=character_sound)
+
+define talking_head = Character("Бошечка из телека", who_color = "#808080", what_color="#808080")
 
 #     Спрайты
 #джек
