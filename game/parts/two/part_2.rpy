@@ -1,7 +1,7 @@
 
 define slow_fade = Fade(1.5, 2, 3)
 
-label start_part1:
+label start_part2:
     scene entrance
     $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True)
     pause 2
