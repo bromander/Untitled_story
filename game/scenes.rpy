@@ -63,7 +63,11 @@ screen show_scene(_xpos, _ypos, room, is_reflected):
         _yzoom = 1
         if is_reflected:
             _yzoom = -1
-    $ renpy.show(f"bg {room}")
+    python:
+        if persistent.switch_toggles[room]:
+            renpy.show(f"bg {room} light_on")
+        else:
+            renpy.show(f"bg {room}")
     $ _state = get_scene_state(room)
     vbox:
         imagebutton:
