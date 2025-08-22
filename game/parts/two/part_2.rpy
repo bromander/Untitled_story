@@ -2,12 +2,12 @@
 define slow_fade = Fade(1.5, 2, 3)
 
 label start_part2:
-    scene entrance
+    scene bg entrance
     $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True)
     pause 2
 
     narrator "Свет ламп накаливания..."
-    narrator "Зелёная, пыльная краска на стенах..."
+    narrator "Синяя, пыльная краска на стенах..."
     narrator "Запахи ухода за домашними животными доносятся из соседних квартир."
     narrator "Типичная хрущевка"
 
@@ -16,37 +16,33 @@ label start_part2:
     j "Хотя вопрос скорее... {w=0.2}\n{i}\"Когда эту хрущевку отдадут под снос чтобы у меня больше не было причин откладывать этот момент\"{/i}"
     hide j_jacket
 
-    scene entrance
+    scene bg entrance porch
     show j_jacket with slow_fade
     $ renpy.music.stop(channel='music', fadeout=0.6)
 
     j "Так что ж мне нужно было..."
 
-    $ renpy.sound.play("sfx/echo_walk.ogg", channel="sound", loop=True)
-    hide j_jacket
-    pause 5.0
+    hide j_jacket with fade
 
-    $ renpy.sound.stop(channel='sound', fadeout=1)
+    narrator "Под ногами что-то оказалось и джек споткнулся"
 
-    narrator_small "Под ногами что-то оказалось и джек споткнулся"
-
-    show j_falling with hpunch
+    show j_jacket_falling with hpunch
     j_fast "А-А-А"
-    hide j_fast with fade
+    hide j_jacket_fast with fade
 
-    scene entrance porch
-    $ renpy.sound.play("bg/flicker.mp3", channel="sound", loop=True, relative_volume=0.2)
+    scene bg entrance porch
+    $ renpy.sound.play("bg/flicker.mp3", channel="sound", loop=True, relative_volume=0.1)
     pause 2
 
-    show j_jacket_scared with dissolve
+    show j_jacket_sweat with dissolve
     j_fast "Твою мать!{w=0.5} Кто это!"
-    narrator_small "Джек поднялся на ноги и рассмотрел тело внимательней"
-    hide j_jacket_scared with dissolve
+    hide j_jacket_sweat with dissolve
+    narrator "Джек поднялся на ноги и рассмотрел тело внимательней"
 
-    narrator_small "То было тело человека ещё живого, судя по наличию у него дыхания... \n{w=1.0}И пьяным.. {w=0.3}судя по запаху..."
-    narrator_small "Самым пугающим было скорее то, что он был одет не по погоде. \n{w=0.3}Если слово \"Одет\" тут вообще применимо. учитывая погоду."
-    narrator_small "Пара сланцев, шорты, да дебильная футболка. {w=0.3}Ну и неряшливый вид немытых длинных волос наводит не на самые приятные мысли о его состоянии."
-    narrator_small "Хуже всего было только то, что он был бледный и холодный и то,\n что он близок к обморожению."
+    narrator "То было тело человека ещё живого, судя по наличию у него дыхания... \n{w=1.0}И пьяным.. {w=0.3}судя по запаху..."
+    narrator "Самым пугающим было скорее то, что он был одет не по погоде. \n{w=0.3}Если слово \"Одет\" тут вообще применимо. учитывая погоду."
+    narrator "Пара сланцев, шорты, да дебильная футболка. {w=0.3}Ну и неряшливый вид немытых длинных волос наводит не на самые приятные мысли о его состоянии."
+    narrator "Хуже всего было только то, что он был бледный и холодный и то,\n что он близок к обморожению."
 
     show j_jacket_scared with dissolve
     j_fast "Охренеть! Он же тут замерзнет... \n{w=0.5}Не хватало ещё чтобы перед домом кто-то умер!"
@@ -57,7 +53,7 @@ label start_part2:
 
 label what_jack_wil_do_omg:
     show j_jacket_scared with dissolve
-    scene entrance porch
+    scene bg entrance porch
 
     menu:
         "Позвонить в скорую":

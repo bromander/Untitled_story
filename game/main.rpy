@@ -174,6 +174,6 @@ label sigma_masturbistor:
     show sticker12 at random_small_image(*get_randoms())
     pause 1
 
-    none_character ""
+    ""
 
     $ renpy.quit()

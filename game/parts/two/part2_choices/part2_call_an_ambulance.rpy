@@ -1,7 +1,7 @@
 
 
 label part1_call_an_ambulance:
-    scene entrance_porch_jack_fallen
+    scene bg entrance porch
     hide j_jacket_scared with dissolve
     show j_jacket_calling with dissolve
 
@@ -10,7 +10,7 @@ label part1_call_an_ambulance:
     while index < beeps:
         $ index += 1
         $ renpy.sound.play("sfx/phone/calling.ogg", channel="sound", loop=False, relative_volume=0.5)
-        narrator_small "«Идут гудки»"
+        narrator "«Идут гудки»"
         python:
             if renpy.random.randint(0, 1) == 1:
                 is_sweat = True

@@ -49,10 +49,11 @@ init python:
 
 style centered_text:
     yalign 0.5
+    xsize 1400
+
 
 #     Персонажи
-define narrator = Character(None, kind=nvl, what_color="#FFFFFF", what_style='centered_text') #Текст по середине экрана
-define narrator_small = Character(None, what_color="#FFFFFF", what_style='centered_text') #Текст внизу экрана (как обычный персонаж)
+define narrator = Character(None, what_color="#FFFFFF", what_style='centered_text') #Текст по середине экрана
 define j = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa")
 define j_fast = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa", what_slow_cps=50)
 define j_sad = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="jopa", callback=character_sound)
@@ -70,21 +71,22 @@ define talking_head = Character("Бошечка из телека", who_color = 
 
 #     Спрайты
 #джек
-image j = im.FactorScale("sprites/characters/jopa/jopa.png", 8)
-image j_jacket = im.FactorScale("sprites/characters/jopa/jopa_jacket.png", 8)
-image j_jacket_calling = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling.png", 8)
-image j_jacket_calling_sweat = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling_sweat.png", 8)
-image j_jacket_calling_sweat_very = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling_sweat_very.png", 8)
-image j_jacket_calling_evil = im.FactorScale("sprites/characters/jopa/jopa_jacket_calling_evil.png", 8)
-image j_jacket_scared = im.FactorScale("sprites/characters/jopa/jopa_jacket_scared.png", 8)
-image j_sad = im.FactorScale("sprites/characters/jopa/jopa_sad.png", 8)
-image j_angry = im.FactorScale("sprites/characters/jopa/jopa_angry.png", 8)
-image j_falling = im.FactorScale("sprites/characters/jopa/jopa_falling.png", 8)
+image j = im.FactorScale("sprites/characters/jopa/j.png", 0.25)
+image j_jacket = im.FactorScale("sprites/characters/jopa/j_jacket_1.png", 0.25)
+image j_jacket_calling = im.FactorScale("sprites/characters/jopa/j_jacket_calling.png", 0.25)
+image j_jacket_calling_sweat = im.FactorScale("sprites/characters/jopa/j_jacket_calling_sweat.png", 0.25)
+image j_jacket_calling_sweat_very = im.FactorScale("sprites/characters/jopa/j_jacket_calling_sweat_very.png", 0.25)
+image j_jacket_calling_evil = im.FactorScale("sprites/characters/jopa/j_jacket_calling_evil.png", 0.25)
+image j_jacket_scared = im.FactorScale("sprites/characters/jopa/j_jacket_scared.png", 0.25)
+image j_jacket_sweat = im.FactorScale("sprites/characters/jopa/j_jacket_sweat.png", 0.25)
+image j_sad = im.FactorScale("sprites/characters/jopa/j_sad.png", 0.25)
+image j_angry = im.FactorScale("sprites/characters/jopa/j_angry.png", 0.25)
+image j_falling = im.FactorScale("sprites/characters/jopa/j_falling.png", 0.25)
 
 #Дебилыч
-image d = im.FactorScale("sprites/characters/debil/debil.png", 8)
-image d_semidead = im.FactorScale("sprites/characters/debil/debil_semidead.png", 8)
-image d_unknown = im.FactorScale("sprites/characters/debil/debil_unknown.png", 8)
-image d_sad = im.FactorScale("sprites/characters/debil/debil_sad.png", 8)
-image d_angry = im.FactorScale("sprites/characters/debil/debil_angry.png", 8)
+image d = im.FactorScale("sprites/characters/debil/d.png", 0.25)
+image d_semidead = im.FactorScale("sprites/characters/debil/d_semidead.png", 0.25)
+image d_unknown = im.FactorScale("sprites/characters/debil/d_unknown.png", 0.25)
+image d_sad = im.FactorScale("sprites/characters/debil/d_sad.png", 0.25)
+image d_angry = im.FactorScale("sprites/characters/debil/d_angry.png", 0.25)
 
