@@ -320,9 +320,6 @@ screen show_note(note_name):
             ymaximum 1000
 
 
-
-
-
 init:
     transform note_zoomed:
         zoom 5.0
@@ -335,7 +332,6 @@ screen note(note_name):
         at note_zoomed
         focus_mask True
         action Show("show_note", note_name=note_name)
-
 
 
 ################################################################################
