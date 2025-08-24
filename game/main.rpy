@@ -1,5 +1,14 @@
 ﻿
 label start:
+    $ quick_menu = False
+    scene bg tutor 1
+    $ renpy.pause()
+    scene bg tutor 2
+    $ renpy.pause()
+    scene bg tutor 3
+    $ renpy.pause()
+    $ quick_menu = True
+
     jump start_part1
 
     $ renpy.sound.play("bg/silent_hill_2_Akira Yamaoka - A World Of Madness.mp3", channel="music", loop=True, relative_volume=0.1)
