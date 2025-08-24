@@ -1,6 +1,5 @@
 ﻿
 label start:
-
     jump start_part1
 
     $ renpy.sound.play("bg/silent_hill_2_Akira Yamaoka - A World Of Madness.mp3", channel="music", loop=True, relative_volume=0.1)

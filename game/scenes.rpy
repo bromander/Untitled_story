@@ -5,7 +5,8 @@ init:
     image bg test_room = im.FactorScale("images/sprites/scenes/jopa_home/bg test_room.png", 1)
 
     image bg entrance = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance.jpg", 0.5325)
-    image bg entrance light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance light_one.jpg", 0.5325)
+    image bg entrance porch = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance porch.jpg", 0.5325)
+    image bg entrance light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance light_on.jpg", 0.5325)
     image bg entrance 2 = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance 2.jpg", 0.5325)
 
     image bg entrance porch = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance porch.jpg", 0.5325)
@@ -22,9 +23,9 @@ init:
     image bg bathroom cleared light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared light_on.jpg", 0.5325)
 
     image bg jopa_room = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room.jpg", 0.5325)
-    image bg jopa_room light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room light_on.jpg", 1)
-    image bg jopa_room bed = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room bed.jpg", 1)
-    image bg jopa_room bed light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room bed light_on.jpg", 1)
+    image bg jopa_room light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room light_on.jpg",  0.5325)
+    image bg jopa_room bed = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room bed.jpg",  0.5325)
+    image bg jopa_room bed light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room bed light_on.jpg",  0.5325)
 
     image bg kitchen = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen.jpg", 0.5325)
     image bg kitchen light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen light_on.jpg", 0.5325)
@@ -33,7 +34,7 @@ init:
     image bg kitchen fridge open = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge open.png", 0.5325)
     image bg kitchen fridge open light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge open light_on.png", 0.5325)
 
-        image bg exit = im.FactorScale("images/sprites/scenes/jopa_home/bg exit.jpg", 0.5325)
+    image bg exit = im.FactorScale("images/sprites/scenes/jopa_home/bg exit.jpg", 0.5325)
     image bg exit light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg exit light_on.jpg", 0.5325)
 
 
@@ -70,22 +71,26 @@ init python:
             renpy.show(f"bg {room} light_on")
 
 init:
-    transform image_toggle_size(_zoom, _yzoom):
-        xzoom _yzoom
+    transform image_toggle_size(_zoom, _xzoom):
+        xzoom _xzoom
         zoom _zoom
 
 
-screen show_scene(_xpos, _ypos, room, is_reflected):
+screen show_scene(_xpos, _ypos, room, is_reflected): # WIP
+    tag show_scene
     python:
-        _yzoom = 1
+        print(list(renpy.get_showing_tags(layer='master'))[0])
+        _xzoom = 1
         if is_reflected:
-            _yzoom = -1
-    python:
-        if persistent.switch_toggles[room]:
+            _xzoom = -1
+
+        _state = get_scene_state(room)
+
+        if _state == 1:
             renpy.show(f"bg {room} light_on")
         else:
             renpy.show(f"bg {room}")
-    $ _state = get_scene_state(room)
+
     vbox:
         imagebutton:
             idle f"images/sprites/light_switch/switch_{_state}.png"
@@ -95,5 +100,4 @@ screen show_scene(_xpos, _ypos, room, is_reflected):
                 Function(edit_switch_state, room),
                 SetScreenVariable("_state", get_scene_state(room))
             ]
-            at image_toggle_size(0.8, _yzoom)
-        $ print(_yzoom)
+            at image_toggle_size(0.8, _xzoom)

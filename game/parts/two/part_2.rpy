@@ -1,8 +1,14 @@
 
 define slow_fade = Fade(1.5, 2, 3)
 
+transform show_jack_at_right:
+    ypos 160
+    xalign 0.85
+    xzoom -1
+
+
 label start_part2:
-    scene bg entrance
+    scene bg entrance light_on
     $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True)
     pause 2
 
@@ -12,12 +18,12 @@ label start_part2:
     narrator "Типичная хрущевка"
 
     j "Когда ж я уже перееду..."
-    show j_jacket with dissolve
+    show j_jacket at show_jack_at_right with dissolve
     j "Хотя вопрос скорее... {w=0.2}\n{i}\"Когда эту хрущевку отдадут под снос чтобы у меня больше не было причин откладывать этот момент\"{/i}"
     hide j_jacket
 
+    show j_jacket at show_jack_at_right with slow_fade
     scene bg entrance porch
-    show j_jacket with slow_fade
     $ renpy.music.stop(channel='music', fadeout=0.6)
 
     j "Так что ж мне нужно было..."
@@ -26,7 +32,7 @@ label start_part2:
 
     narrator "Под ногами что-то оказалось и джек споткнулся"
 
-    show j_jacket_falling with hpunch
+    show j_jacket_falling at show_jack_at_right with hpunch
     j_fast "А-А-А"
     hide j_jacket_fast with fade
 
@@ -34,7 +40,7 @@ label start_part2:
     $ renpy.sound.play("bg/flicker.mp3", channel="sound", loop=True, relative_volume=0.1)
     pause 2
 
-    show j_jacket_sweat with dissolve
+    show j_jacket_sweat at show_jack_at_right with dissolve
     j_fast "Твою мать!{w=0.5} Кто это!"
     hide j_jacket_sweat with dissolve
     narrator "Джек поднялся на ноги и рассмотрел тело внимательней"
