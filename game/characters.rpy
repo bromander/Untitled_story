@@ -57,18 +57,18 @@ init:
     define narrator_creepy = Character(None, kind=nvl, what_color="#FFFFFF", what_style="centered_text")
 
     # Джопа
-    define j = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa")
-    define j_fast = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa", what_slow_cps=50)
-    define j_sad = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="jopa", callback=character_sound)
-    define j_scared = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", what_prefix="{i}{w=0.2}{size=-3}{shader=jitter:u__jitter=3.0,3.0}", what_suffix="{/shader}{/size}{/i}", what_slow_cps=55, cb_character_name="jopa", callback=character_sound)
-    define j_angry = Character("Джопаждек /", who_color="#D2691E", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="jopa", callback=character_sound)
+    define j = Character("Джопаждек/", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa")
+    define j_fast = Character("Джопаждек/", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa", what_slow_cps=50)
+    define j_sad = Character("Джопаждек/", who_color="#D2691E", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="jopa", callback=character_sound)
+    define j_scared = Character("Джопаждек/", who_color="#D2691E", what_color="#CD853F", what_prefix="{i}{w=0.2}{size=-3}{shader=jitter:u__jitter=3.0,3.0}", what_suffix="{/shader}{/size}{/i}", what_slow_cps=55, cb_character_name="jopa", callback=character_sound)
+    define j_angry = Character("Джопаждек/", who_color="#D2691E", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="jopa", callback=character_sound)
 
     #Дебилыч
-    define d = Character("Дибилыч /", who_color="#BDB76B", what_color="#CD853F", character_name="debil", cb_character_name="debil", callback=character_sound)
-    define d_unknown = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_color="#808080", what_prefix="{i}", what_suffix="{/i}", cb_character_name="debil", callback=character_sound)
-    define d_semidead = Character("??ЧЕЛОВЕК?? /", who_color="#808080", what_color="#808080", what_slow_cps=10, cb_character_name="debil_misunderstood", callback=character_sound)
-    define d_sad = Character("Дибилыч /", who_color="#BDB76B", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="debil", callback=character_sound)
-    define d_angry = Character("Дибилыч /", who_color="#BDB76B", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="debil", callback=character_sound)
+    define d = Character("Дибилыч/", who_color="#BDB76B", what_color="#CD853F", character_name="debil", cb_character_name="debil", callback=character_sound)
+    define d_unknown = Character("??ЧЕЛОВЕК??/", who_color="#808080", what_color="#808080", what_prefix="{i}", what_suffix="{/i}", cb_character_name="debil", callback=character_sound)
+    define d_semidead = Character("??ЧЕЛОВЕК??/", who_color="#808080", what_color="#808080", what_slow_cps=10, cb_character_name="debil_misunderstood", callback=character_sound)
+    define d_sad = Character("Дибилыч/", who_color="#BDB76B", what_color="#CD853F", what_prefix="{i}{w=0.2}", what_suffix="{/i}", what_slow_cps=25, cb_character_name="debil", callback=character_sound)
+    define d_angry = Character("Дибилыч/", who_color="#BDB76B", what_color="#cd863f", what_prefix="{size=+9}", what_suffix="{/size}", what_slow_cps=60, cb_character_name="debil", callback=character_sound)
 
     #Телек
     define talking_head = Character("Бошечка из телека", who_color = "#808080", what_color="#808080")

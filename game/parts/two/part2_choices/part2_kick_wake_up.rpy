@@ -40,7 +40,7 @@ label part2_kick_wake_up:
     narrator_creepy '{shader=jitter:u__jitter=15.0, 15.0}{fast}{size=+60}{color=#ff0000}{b}{fast}... НО       ЭТО       НЕ        КОНЧАЕТСЯ ...{/b}{/color}{/size}{nw}'
     narrator_creepy '{shader=jitter}{alpha=0.7}{cps=12}{color=#9C0000}{b}Никак не вдохнуть? \nСтрах перетекает в панику? \nПаника переходит в судороги? \nВ тебя вцепились не руки а холодная сталь, которую нельзя убрать.{/b}{/color}{/cps}{/alpha}'
     nvl clear
-    scene bg blackscreen with slow_fade
+    scene bg blackscreen with fade
     narrator_creepy '{shader=jitter:u__jitter=25.0, 25.0}{fast}{size=+60}{color=#ff0000}{b}{fast}... НО       ЭТО       НЕ        КОНЧАЕТСЯ ...{/b}{/color}{/size}{nw}'
     narrator_creepy '{shader=jitter}{alpha=0.5}{cps=10}{color=#6E0000}{b}То что ты чувствуешь - нельзя назвать болью... \nЭто первобытный ужас вызванный твоей же беспомощностью... \nУже ничто не беспокоит тебя кроме воздуха... \nВсё кончено...{/b}{/color}{/cps}{/alpha}'
     nvl clear
