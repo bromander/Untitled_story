@@ -293,11 +293,59 @@ style quick_button_text:
 ## Экран записьки
 ################################################################################
 
+init:
+    transform image_note:
+        zoom 0.32
+
+init python:
+    show_note_shown = False
+
 
 screen show_note(note_name):
     key "mouseup_1" action Hide("show_note")
     key "K_ESCAPE" action Hide("show_note")
     zorder 50
+
+    python:
+
+        import json
+        from pathlib import Path
+        base = Path(renpy.config.basedir)
+        path = base / "game" / "notes.json"
+        with open(path) as file_data:
+            file_data = json.load(file_data)
+            _text = file_data[note_name]["text"]
+            _colour = file_data[note_name]["colour"]
+            _name = file_data[note_name]["note_name"]
+        if _name in ["ЗарисовОЧКО"]:
+            _text = _text.split(', ')
+            is_type_list = True
+            print(_text)
+        else:
+            _text = "\n" + file_data[note_name]["text"]
+            is_type_list = False
+    if is_type_list:
+        frame:
+            align (0.8, 0.5)
+            background "images/sprites/note_button/noteBG.png"
+            xysize (600, 1000)
+            padding (100, 40)
+            vbox:
+                spacing 20
+                python:
+                    for e, img_name in enumerate(_text):
+                        ui.add(img_name, at=image_note)
+    else:
+        frame:
+            align (0.8, 0.5)
+            background "images/sprites/note_button/noteBG.png"
+            xysize (600, 1000)
+
+
+            text _text color _colour:
+                size 25
+                xmaximum 600
+                ymaximum 1000
     python:
         import json
         from pathlib import Path
@@ -305,33 +353,22 @@ screen show_note(note_name):
         path = base / "game" / "notes.json"
         with open(path) as file_data:
             file_data = json.load(file_data)
-            _text = "\n" + file_data[note_name]["text"]
-            _colour = file_data[note_name]["colour"]
-    frame:
-        align (0.8, 0.5)
-        background "images/sprites/note_button/noteBG.png"
-        fixed
-        xysize (600, 1000)
-
-
-        text _text color _colour:
-            size 25
-            xmaximum 600
-            ymaximum 1000
+        founded = len([i for i in file_data if i in persistent.notes_counter])
 
 
 init:
     transform note_zoomed:
         zoom 5.0
 
-screen note(note_name):
-    imagebutton:
-        idle "sprites/note_button/idle.png"
-        hover "sprites/note_button/hover.png"
-        xalign 0.2 yalign 0.5
-        at note_zoomed
-        focus_mask True
-        action Show("show_note", note_name=note_name)
+screen note(note_name, _xpos, _ypos):
+    if note_name not in persistent.notes_counter:
+        imagebutton:
+            idle "sprites/note_button/idle.png"
+            hover "sprites/note_button/hover.png"
+            xpos _xpos ypos _ypos
+            at note_zoomed
+            focus_mask True
+            action Show("show_note", note_name=note_name)
 
 
 ################################################################################
@@ -371,7 +408,6 @@ screen navigation():
             if persistent.notes_counter == None:
                     persistent.notes_counter = []
 
-            persistent.notes_counter = ["note1", "note2", "note3", "note4"]
 
             if persistent.notes_counter:
                 is_notes_counter = True
