@@ -404,11 +404,19 @@ screen navigation():
         if main_menu:
             textbutton _("???") action ShowMenu("sigma_masturbistor")
 
-        if renpy.variant("pc"):
+        python:
+            if not hasattr(persistent, "is_sleeps"):
+                    persistent.is_sleeps = False
+
+        if renpy.variant("pc") and not persistent.is_sleeps:
 
             ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
             ## версии.
             textbutton _("Выход") action Quit(confirm=not main_menu)
+        elif renpy.variant("pc") and persistent.is_sleeps:
+            ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
+            ## версии.
+            textbutton _("Проснуться") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button

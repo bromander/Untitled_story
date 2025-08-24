@@ -54,7 +54,7 @@ style centered_text:
 init:
     #     Персонажи
     define narrator = Character(None, what_color="#FFFFFF", what_style='centered_text')
-    define narrator_creepy = Character(None, what_color="#FFFFFF", what_style='centered_text', what_prefix="{shader=jitter}", what_suffix="{/shader}")
+    define narrator_creepy = Character(None, kind=nvl, what_color="#FFFFFF", what_style="centered_text")
 
     # Джопа
     define j = Character("Джопаждек /", who_color="#D2691E", what_color="#CD853F", callback=character_sound, cb_character_name="jopa")

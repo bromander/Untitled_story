@@ -8,8 +8,8 @@ transform show_jack_at_right:
 
 
 label start_part2:
-    scene bg entrance light_on
-    $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True)
+    scene bg entrance light_on with fade
+    $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True, relative_volume=2)
     pause 2
 
     narrator "Свет ламп накаливания..."
@@ -41,7 +41,7 @@ label start_part2:
     pause 2
 
     show j_jacket_sweat at show_jack_at_right with dissolve
-    j_fast "Твою мать!{w=0.5} Кто это!"
+    j_fast "Твою мать!{w=0.5} Кто это?"
     hide j_jacket_sweat with dissolve
     narrator "Джек поднялся на ноги и рассмотрел тело внимательней"
 
@@ -53,6 +53,7 @@ label start_part2:
     show j_jacket_scared with dissolve
     j_fast "Охренеть! Он же тут замерзнет... \n{w=0.5}Не хватало ещё чтобы перед домом кто-то умер!"
     $ renpy.sound.stop(channel='sound', fadeout=5)
+    j "Н-но что же мне делать?"
     jump what_jack_wil_do_omg
 
 define try_part2_call_an_ambulance = False

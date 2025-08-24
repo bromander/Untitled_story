@@ -6,6 +6,7 @@ define ch_tour = False
 define notinoti = False #Было ли рассказано о возможности взаимодействовать с объектами на фоне
 
 label start_part1:
+    $ renpy.music.play("bg/Home.mp3", channel="music", loop=True, relative_volume=0.2, fadein=1)
     init python:
         config.layers.insert(0, "background")
 
@@ -24,9 +25,6 @@ j "Ммм, какая забота..."
 
 label to_do_list:
     scene bg hall light_on
-    python:
-        if not hasattr(persistent, "is_sleeps"):
-                persistent.is_sleeps = False
     menu:
         "Что будем делать?"
         "почистить зеркало в ванной" if not ch_mir:
@@ -175,8 +173,12 @@ label reflect_room:
     scene bg bathroom light_on
     "Где-то за стеной шумит вода, льющаяся по трубам. Воздух немного влажный, но в нём нет кислого запаха плесени. Стало быть, регулярная чистка даёт свои плоды."
     #{фон: непочищенное мутное зеркало над раковиной, но теперь рука открывает кран, бежит вода} Я ОТРИСУЮ
+    $ renpy.sound.play("sfx/washing.mp3", channel="sound", loop=False, relative_volume=0.5)
     "Вода свежая, но не обжигающе холодная. Она контрастирует с тёплым воздухом в помещении и ослабляет сонливость. Тряпка для протирки стёкол быстро впитывает её и тихо поскрипывает, когда ею протирают зеркало. Или это скрип стекла?"
+    $ renpy.sound.stop(channel='sound')
+    $ renpy.sound.play("sfx/washing_pitch.ogg", channel="sound", loop=False, relative_volume=0.7)
     "Затем в ход идёт сухой край полотенца для рук. Скрип немного громче, а следом остаётся лишь кристально чистая поверхность."
+    $ renpy.sound.stop(channel='sound')
     scene bg bathroom cleared light_on #временно?
     #{фон: чистое зеркало над раковиной, блик закрывает отражение} Я ОТРИСУЮ
     #{Всплывающее уведомление Ren’Py: С некоторыми объектами можно взаимодействовать.}
@@ -197,6 +199,8 @@ label go_out_for:
         scene bg exit light_on
         "Джек накинул на плечи пальто, быстрым движением вдел руки, поправил забившийся в рукаве пальто рукав рубашки и застегнулся."
         "Перед выходом он ещё раз окинул взглядом квартиру, убеждаясь, что не оставляет ничего лишнего во включённом состоянии, после чего натянул шапку и вышел за дверь. Щёлкнули ключи в замке, и прихожая затихла..."
+        $ renpy.music.stop(channel='music', fadeout=5)
+        pause 5
         jump start_part2
 
 
