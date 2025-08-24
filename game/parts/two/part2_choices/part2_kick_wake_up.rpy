@@ -28,7 +28,7 @@ label part2_kick_wake_up:
     narrator_creepy '{shader=jitter}{alpha=0.5}{cps=5}{size=+40}{color=#4A0000}{b}Ты... Ничто...{/b}{/color}{/size}{/cps}{/alpha}'
     nvl clear
     $ renpy.sound.play("sfx/ominous.mp3", channel="sound", loop=False, relative_volume=1)
-    $ my_jitter_strength = 10.0
+    $ my_jitter_strength = 25.0
     while True:
         narrator_creepy '{shader=jitter:u__jitter=[my_jitter_strength], [my_jitter_strength]}{fast}{size=+45}{color=#ff0000}{b}... НО       ЭТО       НЕ        КОНЧАЕТСЯ ...{/b}{/color}{/size}{nw}'
         $ my_jitter_strength += 5

@@ -74,14 +74,15 @@ label what_jack_wil_do_omg:
             $ try_part2_try_wake_up = True
             jump part2_try_wake_up
 
-        "Пнуть чтобы разбудить" if not try_part2_kick_wake_up:
+        "Пнуть чтобы разбудить" if not try_part2_kick_wake_up and try_part2_try_wake_up:
             $ try_part2_kick_wake_up = True
             jump part2_kick_wake_up
 
-        "Проигнорировать и пойти дальше по своим делам" if not try_part2_ignore:
+        "Проигнорировать и пойти дальше по своим делам" if not try_part2_ignore and try_part2_try_wake_up and try_part2_call_an_ambulance:
             $ try_part2_ignore = True
             jump part2_ignore
 
-        "Помочь Человеку занеся его домой" if try_part2_ignore and try_part2_kick_wake_up and try_part2_try_wake_up and try_part2_call_an_ambulance:
+        "Помочь Человеку, занеся его домой" if try_part2_try_wake_up and try_part2_call_an_ambulance:
             jump part2_help_to_home
+
 
