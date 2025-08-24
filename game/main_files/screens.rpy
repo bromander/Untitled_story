@@ -487,10 +487,12 @@ screen developers():
             label "     [config.name!t]":
                 text_size 60
             text _("     Версия [config.version!t]\n") size 40  xpos 35
+
             label "\nХудожники:":
                 text_size 50
 
             text _(
+            "Yunitvi3 - {a=https://t.me/Unimania6}Телеграм{/a}\n"
             "Мясорубка - {a=https://t.me/HaPkOmmAn}Телеграм{/a}\n"
             "BBBBANSCHOS🍀 - {a=https://t.me/bnnnschchcha}Телеграм{/a}\n"
             "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}"
@@ -500,16 +502,17 @@ screen developers():
                 text_size 50
 
             text _(
-            "bromand - {a=https://t.me/br0mand}Телеграм{/a}"
+            "bromand - {a=https://t.me/br0mand}Телеграм{/a}, {a=https://bromand.itch.io/}ItchIo{/a}, {a=https://github.com/bromander}Github{/a}"
             ) ypos 10 xpos 5
 
             label "\nСценаристы:":
                 text_size 50
 
             text _(
-            "ZerOS ゼロス - {a=https://t.me/DemonTrader}Телеграм{/a}\n"
+            "Эдвин - {a=https://t.me/DemonTrader}Телеграм{/a}\n"
             "BBBBANSCHOS🍀 - {a=https://t.me/bnnnschchcha}Телеграм{/a}\n"
-            "Sandra - {a=https://t.me/Sarventaa}Телеграм{/a}"
+            "Sandra - {a=https://t.me/Sarventaa}Телеграм{/a}\n"
+            "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}"
             ) ypos 10 xpos 5
 
 ## Экран главного меню #########################################################
