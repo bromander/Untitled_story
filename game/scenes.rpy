@@ -2,7 +2,7 @@
 # спрайты фонов у которых значение размера 0.5325 - неверного формата. Я уже сказал художнику и их дорисуют
 
 init:
-    image bg test_room = im.FactorScale("images/sprites/scenes/jopa_home/bg test_room.jpg", 1)
+    image bg test_room = im.FactorScale("images/sprites/scenes/jopa_home/bg test_room.png", 1)
 
     image bg entrance = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance.jpg", 0.5325)
     image bg entrance light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance light_one.jpg", 0.5325)
@@ -17,7 +17,7 @@ init:
 
     image bg bathroom = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom.jpg", 0.5325)
     image bg bathroom light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom light_on.jpg", 0.5325)
-    image bg bathroom bath = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom bath.jpg", 0.5325)
+    image bg bathroom bath = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom bath.png", 0.5325)
     image bg bathroom cleared = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared.jpg", 0.5325)
     image bg bathroom cleared light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared light_on.jpg", 0.5325)
 
@@ -28,10 +28,10 @@ init:
 
     image bg kitchen = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen.jpg", 0.5325)
     image bg kitchen light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen light_on.jpg", 0.5325)
-    image bg kitchen fridge = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge.jpg", 0.5325)
-    image bg kitchen fridge light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge light_on.jpg", 0.5325)
-    image bg kitchen fridge opened = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge opened.jpg", 0.5325)
-    image bg kitchen fridge opened light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge opened light_on.jpg", 0.5325)
+    image bg kitchen fridge = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge.png", 0.5325)
+    image bg kitchen fridge light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge light_on.png", 0.5325)
+    image bg kitchen fridge open = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge open.png", 0.5325)
+    image bg kitchen fridge open light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge open light_on.png", 0.5325)
 
         image bg exit = im.FactorScale("images/sprites/scenes/jopa_home/bg exit.jpg", 0.5325)
     image bg exit light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg exit light_on.jpg", 0.5325)
