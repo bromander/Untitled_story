@@ -5,8 +5,8 @@ label part2_kick_wake_up:
     hide j_jacket_scared with dissolve
     show j_jacket_angry at show_jack_at_right with dissolve
     $ renpy.music.stop(channel='music', fadeout=5)
-    'Джек пинает тело... \nтело отзывается звуками лёгкого хруста и задыхающегося человека'
-    j_angry 'Проснись дебил! Ты тут сдохнуть хочешь?!'
+    'Джек пинает тело... \nтело отзывается звуками лёгкого хруста и задыхающегося человека.'
+    j_angry 'Проснись, дебил! Ты тут сдохнуть хочешь?!'
     scene bg blackscreen with slow_fade
     $ renpy.music.play("bg/Tinnitus.ogg", channel="music", loop=True, relative_volume=0.8, fadein=25)
     hide j_jacket_angry

@@ -10,7 +10,7 @@ label part2_call_an_ambulance:
     while index < beeps:
         $ index += 1
         $ renpy.sound.play("sfx/phone/calling.ogg", channel="sound", loop=False, relative_volume=0.5)
-        narrator "«Идут гудки»"
+        narrator "{i}*идут гудки*{/i}"
         python:
             if renpy.random.randint(0, 1) == 1:
                 is_sweat = True
