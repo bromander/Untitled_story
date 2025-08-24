@@ -406,14 +406,14 @@ screen navigation():
 
         python:
             if not hasattr(persistent, "is_sleeps"):
-                    persistent.is_sleeps = False
+                    persistent.is_sleeped = False
 
-        if renpy.variant("pc") and not persistent.is_sleeps:
+        if renpy.variant("pc") and not persistent.is_sleeped:
 
             ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
             ## версии.
             textbutton _("Выход") action Quit(confirm=not main_menu)
-        elif renpy.variant("pc") and persistent.is_sleeps:
+        elif renpy.variant("pc") and persistent.is_sleeped:
             ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
             ## версии.
             textbutton _("Проснуться") action Quit(confirm=not main_menu)

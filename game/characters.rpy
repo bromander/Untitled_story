@@ -73,6 +73,9 @@ init:
     #Телек
     define talking_head = Character("Бошечка из телека", who_color = "#808080", what_color="#808080")
 
+    #mashenbka
+    define mashenbka = Character(None, kind=nvl, what_color="#FFFFFF", what_style="centered_text", what_prefix='{shader=jitter:u__jitter=5.0, 5.0}{cps=5}{size=+60}{color=#ff0000}{b}')
+
     #     Спрайты
     #джек
     image j = im.FactorScale("sprites/characters/jopa/j_1.png", 0.25)
