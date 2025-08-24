@@ -2,26 +2,39 @@
 # спрайты фонов у которых значение размера 0.5325 - неверного формата. Я уже сказал художнику и их дорисуют
 
 init:
-    image bg test_room = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance.jpg", 1)
+    image bg test_room = im.FactorScale("images/sprites/scenes/jopa_home/bg test_room.jpg", 1)
 
     image bg entrance = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance.jpg", 0.5325)
+    image bg entrance light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance light_one.jpg", 0.5325)
+    image bg entrance 2 = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance 2.jpg", 0.5325)
+
     image bg entrance porch = im.FactorScale("images/sprites/scenes/jopa_home/bg entrance porch.jpg", 0.5325)
 
     image bg hall = im.FactorScale("images/sprites/scenes/jopa_home/bg hall.jpg", 0.5325)
+    image bg hall light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg hall light_on.jpg", 0.5325)
     image bg hall 2 = im.FactorScale("images/sprites/scenes/jopa_home/bg hall 2.jpg", 0.5325)
+    image bg hall 2 light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg hall 2 light_on.jpg", 0.5325)
 
     image bg bathroom = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom.jpg", 0.5325)
+    image bg bathroom light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom light_on.jpg", 0.5325)
     image bg bathroom bath = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom bath.jpg", 0.5325)
+    image bg bathroom cleared = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared.jpg", 0.5325)
+    image bg bathroom cleared light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared light_on.jpg", 0.5325)
 
-    image bg hallway = im.FactorScale("images/sprites/scenes/jopa_home/bg hallway.jpg", 0.5325)
-
-    image bg jack_room = im.FactorScale("images/sprites/scenes/jopa_home/bg jack_room.jpg", 0.5325)
-    image bg jack_room light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jack_room light_on.jpg", 1)
+    image bg jopa_room = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room.jpg", 0.5325)
+    image bg jopa_room light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room light_on.jpg", 1)
+    image bg jopa_room bed = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room bed.jpg", 1)
+    image bg jopa_room bed light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg jopa_room bed light_on.jpg", 1)
 
     image bg kitchen = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen.jpg", 0.5325)
+    image bg kitchen light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen light_on.jpg", 0.5325)
     image bg kitchen fridge = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge.jpg", 0.5325)
+    image bg kitchen fridge light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge light_on.jpg", 0.5325)
     image bg kitchen fridge opened = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge opened.jpg", 0.5325)
+    image bg kitchen fridge opened light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg kitchen fridge opened light_on.jpg", 0.5325)
 
+        image bg exit = im.FactorScale("images/sprites/scenes/jopa_home/bg exit.jpg", 0.5325)
+    image bg exit light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg exit light_on.jpg", 0.5325)
 
 
 
@@ -36,6 +49,10 @@ init python:
             persistent.switch_toggles = {}
         if str(room) not in persistent.switch_toggles.keys():
             persistent.switch_toggles[str(room)] = True
+        if type(persistent.switch_toggles) is not dict:
+            persistent.switch_toggles = {}
+
+
 
         if persistent.switch_toggles[room]:
             _state = 1

@@ -85,8 +85,10 @@ image j_falling = im.FactorScale("sprites/characters/jopa/j_falling.png", 0.25)
 
 #Дебилыч
 image d = im.FactorScale("sprites/characters/debil/d.png", 0.25)
-image d_semidead = im.FactorScale("sprites/characters/debil/d_semidead.png", 0.25)
-image d_unknown = im.FactorScale("sprites/characters/debil/d_unknown.png", 0.25)
+image d_crying = im.FactorScale("sprites/characters/debil/d_crying.png", 0.25)
 image d_sad = im.FactorScale("sprites/characters/debil/d_sad.png", 0.25)
-image d_angry = im.FactorScale("sprites/characters/debil/d_angry.png", 0.25)
-
+image d_smiling = im.FactorScale("sprites/characters/debil/d_smiling.png", 0.25)
+image d_surprised = im.FactorScale("sprites/characters/debil/d_surprised.png", 0.25)
+image d_touched = im.FactorScale("sprites/characters/debil/d_touched.png", 0.25)
+image d_wipes_face = im.FactorScale("sprites/characters/debil/d_wipes_face.png", 0.25)
+image d_wtf = im.FactorScale("sprites/characters/debil/d_wtf.png", 0.25)
