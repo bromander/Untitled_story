@@ -19,10 +19,11 @@ label start_part2:
 
     j "Когда ж я уже перееду..."
     scene bg entrance 2 with dissolve
+    show screen note("note3", 950, 0) with dissolve
     show j_jacket at show_jack_at_right with dissolve
     j "Хотя вопрос скорее... {w=0.2}\n{i}\"Когда эту хрущёвку отдадут под снос чтобы у меня больше не было причин откладывать этот момент\"{/i}."
     hide j_jacket
-
+    hide screen note
     scene bg entrance porch with slow_fade
     show j_jacket 2 at show_jack_at_right
     $ renpy.music.stop(channel='music', fadeout=0.6)
