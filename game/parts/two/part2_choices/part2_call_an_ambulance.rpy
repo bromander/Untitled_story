@@ -1,6 +1,6 @@
 
 
-label part1_call_an_ambulance:
+label part2_call_an_ambulance:
     scene bg entrance porch
     hide j_jacket_scared with dissolve
     show j_jacket_calling with dissolve
