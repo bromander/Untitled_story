@@ -42,8 +42,9 @@ init:
     image snow = im.FactorScale("images/sprites/scenes/snow.jpg", 1.6)
 
     image bg d_j_sidat light_on = im.FactorScale("images/sprites/characters/d_j_sidat light_on.jpg", 0.701)
-
-
+    image Без названия240_20250824233915 = im.FactorScale("images/sprites/characters/Без названия240_20250824233915.jpg", 0.701)
+    image Без названия242_20250825073349 = im.FactorScale("images/sprites/characters/Без названия242_20250825073349.jpg", 0.701)
+    image Без названия242_20250825073345 = im.FactorScale("images/sprites/characters/Без названия242_20250825073345.jpg", 0.701)
 
 ################################################################################
 ## Экран переключателя
