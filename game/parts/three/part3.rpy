@@ -281,19 +281,21 @@ label start_part3:
                     $ renpy.sound.play("sfx/ominous.mp3", channel="sound", loop=False, relative_volume=1)
                     show bg blackscreen with slow_fade
 
-                    show  t 1 with dissolve
+                    $ quick_menu = False
+                    $ _game_menu_screen = None
+                    scene  t 1 with dissolve
                     $ renpy.pause()
-                    show  t 2 with dissolve
+                    scene  t 2 with dissolve
                     $ renpy.pause()
-                    show  t 3 with dissolve
+                    scene  t 3 with dissolve
                     $ renpy.pause()
-                    show  t 4 with dissolve
+                    scene  t 4 with dissolve
                     $ renpy.pause()
-                    show  t 5 with dissolve
+                    scene  t 5 with dissolve
                     $ renpy.pause()
-                    show  t 6 with dissolve
+                    scene  t 6 with dissolve
                     $ renpy.pause()
-                    show  t 7 with dissolve
+                    scene  t 7 with dissolve
                     $ renpy.pause()
 
                     return
