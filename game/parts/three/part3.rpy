@@ -189,3 +189,4 @@ label start_part3:
                     'Наконец они отстраняется друг от друга, отводя глаза в лёгком смущении. Никто ничего не говорит, но оба всё понимают.'
                     'Потому что слова не нужны, когда сердца бьются в унисон.'
                     $ renpy.sound.play("sfx/ominous.mp3", channel="sound", loop=False, relative_volume=1)
+                    show bg blackscreen with slow_fade
