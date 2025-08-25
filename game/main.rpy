@@ -1,13 +1,16 @@
 ﻿
 label start:
-    $ quick_menu = False
-    scene bg tutor 1
-    $ renpy.pause()
-    scene bg tutor 2
-    $ renpy.pause()
-    scene bg tutor 3
-    $ renpy.pause()
-    $ quick_menu = True
+    python:
+        if not hasattr(persistent, "is_sees_tut"):
+            persistent.is_sees_tut = False
+    if not persistent.is_sees_tut:
+        scene bg tutor 1
+        $ renpy.pause()
+        scene bg tutor 2
+        $ renpy.pause()
+        scene bg tutor 3
+        $ renpy.pause()
+        $ persistent.is_sees_tut = True
 
     jump start_part1
 
