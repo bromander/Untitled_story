@@ -41,7 +41,7 @@ label start_part2:
     narrator "Под ногами что-то оказалось, и Джек споткнулся."
 
     j_fast "А-А-А"
-
+    
     pause 2
     show j_jacket_sweat at show_jack_at_right with dissolve
     j_fast "Твою мать!{w=0.5} Кто это?"

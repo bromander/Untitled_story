@@ -2,6 +2,7 @@
 label start_part3:
     $ renpy.music.stop(channel='music', fadeout=2)
     $ renpy.sound.stop(fadeout=2)
+
     scene bg exit with fade
     'Ругаясь под нос на лестницы и тяжесть спасаемого, Джек провернул ключ в двери квартиры, небрежно распахнул её и ввалился в прихожую. Снег, облеплявший одежду и обувь, грязновато-белыми комьями полетел на пол.'
     scene bg exit light_on with dissolve
