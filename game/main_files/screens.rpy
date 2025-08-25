@@ -533,14 +533,15 @@ screen developers():
             "Yunitvi3 - {a=https://t.me/Unimania6}Телеграм{/a}\n"
             "Мясорубка - {a=https://t.me/HaPkOmmAn}Телеграм{/a}\n"
             "BBBBANSCHOS🍀 - {a=https://t.me/bnnnschchcha}Телеграм{/a}\n"
-            "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}"
+            "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}, {a=https://t.me/RTDwings}Телеграм канал{/a}"
             ) ypos 10 xpos 5
 
             label "\nПрограммисты:":
                 text_size 50
 
             text _(
-            "bromand - {a=https://t.me/br0mand}Телеграм{/a}, {a=https://bromand.itch.io/}ItchIo{/a}, {a=https://github.com/bromander}Github{/a}"
+            "bromand - {a=https://t.me/br0mand}Телеграм{/a}, {a=https://bromand.itch.io/}ItchIo{/a}, {a=https://github.com/bromander}Github{/a}\n"
+            "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}, {a=https://bsky.app/profile/rtd-wings.bsky.social}BlueSky{/a}"
             ) ypos 10 xpos 5
 
             label "\nСценаристы:":
