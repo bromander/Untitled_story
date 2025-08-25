@@ -53,7 +53,7 @@ label root_pomp:
     "Идите Ваше Величество... Мой Король Плутона... Наш Король сколопендр..."
     scene bg pomp_end with dissolve
     scene bg blackscreen with slow_fade
-return
+    return
 
 label nev_house:
     $ renpy.music.play("Checkerboard.mpeg", fadein=10)

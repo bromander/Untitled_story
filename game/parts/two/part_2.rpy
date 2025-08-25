@@ -40,13 +40,7 @@ label start_part2:
     hide j_jacket 2 with fade
     narrator "Под ногами что-то оказалось, и Джек споткнулся."
 
-<<<<<<< Updated upstream
     j_fast "А-А-А"
-=======
-    # show j_jacket_falling at show_jack_at_right with hpunch
-    j_fast "А-А-А"
-    # hide j_jacket_falling with fade
->>>>>>> Stashed changes
 
     pause 2
     show j_jacket_sweat at show_jack_at_right with dissolve

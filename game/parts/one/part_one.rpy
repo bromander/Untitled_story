@@ -64,8 +64,9 @@ label to_do_list:
                 "двигаться":
                     jump go_out
                 "замереть":
+                    $ renpy.sound.play("sfx/ominous.mp3", channel="sound", loop=False, relative_volume=1)
                     $ renpy.notify("Тёмная дрёма.")
-                    scene bg blackscreen with fade
+                    scene bg blackscreen with slow_fade
                     $ renpy.quit()
     jump to_do_list
 
