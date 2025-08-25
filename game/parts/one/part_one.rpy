@@ -187,8 +187,6 @@ screen show_random_mirror:
     $ _reflection = renpy.random.randint(1, 6)
     add f"sprites/scenes/jopa_home/reflections/reflect {_reflection}.png"
 
-
-
 screen bathroom_mirror:
     imagebutton:
         xpos 1030
@@ -196,7 +194,6 @@ screen bathroom_mirror:
         idle "sprites/scenes/jopa_home/mirror_handler.jpg"
         mouse 'wow'
         action Show("show_random_mirror")
-
 
 label reflect_room:
     scene bg bathroom light_on
@@ -213,7 +210,7 @@ label reflect_room:
     #{фон: чистое зеркало над раковиной, блик закрывает отражение} Я ОТРИСУЮ
     #{Всплывающее уведомление Ren’Py: С некоторыми объектами можно взаимодействовать.}
     if not notinoti:
-        $ renpy.notify("Попробуй заглянуть в зеркало ещё раз.")
+        $ renpy.notify("Попробуй заглянуть в зеркало ещё раз... или несколько.")
         $ notinoti = True
     #Сделать screen
     "Джек окидывает взглядом своё отражение."
@@ -233,7 +230,10 @@ label go_out_for:
         "Джек накинул на плечи пальто, быстрым движением вдел руки, поправил забившийся в рукаве пальто рукав рубашки и застегнулся."
         "Перед выходом он ещё раз окинул взглядом квартиру, убеждаясь, что не оставляет ничего лишнего во включённом состоянии, после чего натянул шапку и вышел за дверь. Щёлкнули ключи в замке, и прихожая затихла..."
         $ renpy.music.stop(channel='music', fadeout=5)
+        $ renpy.sound.play("click.mp3")
+        $ renpy.sound.play("door_sound.mp3")
         pause 5
+        $ renpy.sound.play("down_stairs.mp3")
         jump start_part2
 
 

@@ -1,7 +1,7 @@
 
 
 label part2_call_an_ambulance:
-    scene bliss with dissolve
+    scene bg podbezd with dissolve
     hide j_jacket_scared with dissolve
     show j_jacket_calling with dissolve
 

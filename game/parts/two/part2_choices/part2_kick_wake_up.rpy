@@ -1,11 +1,11 @@
 
 
 label part2_kick_wake_up:
-    scene bliss with dissolve
+    scene bg podbezd with dissolve
     hide j_jacket_scared with dissolve
     show j_jacket_angry at show_jack_at_right with dissolve
     $ renpy.music.stop(channel='music', fadeout=5)
-    'Джек пинает тело... \nтело отзывается звуками лёгкого хруста и задыхающегося человека.'
+    'Джек пинает тело... \n Tело отзывается звуками лёгкого хруста и задыхающегося человека.'
     j_angry 'Проснись, дебил! Ты тут сдохнуть хочешь?!'
     hide j_jacket_angry
     

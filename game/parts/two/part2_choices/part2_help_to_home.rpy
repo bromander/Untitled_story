@@ -1,7 +1,7 @@
 
 
 label part2_help_to_home:
-    scene bliss with dissolve
+    scene bg podbezd with dissolve
     hide j_jacket_scared with dissolve
     show j_jacket 3 at show_jack_at_right with dissolve
     j "Делать нечего, придётся помогать."
@@ -13,5 +13,6 @@ label part2_help_to_home:
     'Сколько бы Джек не тыкал кнопки, двери лифта не открывались, а привода не гудели!'
     j_angry 'ДА ТВОЮ МАТЬ! \nЕЩЁ И ЛИФТ НЕ РАБОТАЕТ!'
     j_angry 'Дрыхнешь, да?! \n{w=0.3}Ты как бы тяжёлый! \n{w=0.2}ЭЭЭЭЭЭХ!'
+    $ renpy.sound.play("up_stairs.mp3")
     'Смирившись со своей участью, Джек поднялся на свой этаж с жертвой общества потребления на своих могучих плечах.'
     jump start_part3

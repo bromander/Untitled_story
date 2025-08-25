@@ -1,6 +1,6 @@
 
 label part2_ignore:
-    scene bliss
+    scene bg street
     hide j_jacket_scared with dissolve
     show j_jacket_sweat at show_jack_at_right with dissolve
 
@@ -16,7 +16,7 @@ scene bg blackscreen
 
 scene bg entrance
 
-j "Так... на сколько мне сегодня не лень спускаться по лестнице?"
+j "Так... насколько мне сегодня не лень спускаться по лестнице?"
 
 menu:
     "Однозначно лень, лифт наше всё":
@@ -30,14 +30,18 @@ menu:
 label root_pomp:
     scene bg elev 1
     j "Что-то долго... Я ж не с восьмого этажа спускаюсь..."
-    scene bg elev 2
-    $ renpy.music.play("Down We Go.mp3", fadein=20)
+    scene bg elev 2 with dissolve
+    $ renpy.music.play("Down We Go.mp3", fadein=10)
+    $ renpy.pause(delay = 2)
     j "Это не хорошо... А раньше лифт так шумел?"
     # Фон переходит в красные тона джек в ужасе смотрит в камеру, а с боков от него приближаются шестерни. Музыка из психопомпы на фоне начинает тихо играть постепенно становясь громче
     "Шум привода лифта становится более громким и прерывистым, переходя от успокающего гудения к нагнетающему стуку шестерёнок крупного механизма..."
+    $ renpy.pause(delay = 3)
+    $ renpy.music.stop()
     "...а затем неожиданно прекратился, оставив после себя пустой гул."
     scene bg blackscreen
     $ renpy.sound.play("down open.mp3")
+    $ renpy.music.play("God Race.mp3", fadein=20)
     "Двери лифта с мерзким скрипом раскрываются, открывая вид на кроваво-красные структуры утопленные в море крови, которые оцепила гигантская моль."
     scene bg the_root
     "Ноги несут сами, проходя мимо странных, тревожащих вещей, прямо навстречу этому приливу."
@@ -45,7 +49,9 @@ label root_pomp:
     "Кажется безумные теории уже не такие безумные? Да, человек из глины? Как жаль, что ты не мог прочитать мысли людей когда вздумается, чтобы понять, что на самом деле скрывали от тебя правду..."
     scene bg pomp_end
     $ renpy.sound.play("sfx/ominous.mp3", channel="sound", loop=False, relative_volume=1)
-    "Идите ваше величество... Мой Король плутона... Наш Король сколопендр..."
+    $ renpy.notify("Корень Жёсткой Структуры.")
+    "Идите Ваше Величество... Мой Король Плутона... Наш Король сколопендр..."
+    scene bg pomp_end with dissolve
     scene bg blackscreen with slow_fade
 return
 
@@ -54,15 +60,17 @@ label nev_house:
     scene bg nev 1 with dissolve
 
     j "Размять ноги - тоже полезно! Если только не споткнусь и не ударюсь виском о ступеньку..."
-    j 'ЧЁТР! Ну и мысли в голову лезут.'
+    j 'ЧЁРT! Ну и мысли в голову лезут.'
+    $ renpy.sound.play("up_stairs.mp3")
+    scene bg nev 3 with dissolve
     'Эхо более ощутимое чем раньше, да и лестница с непривычки кажется длиннее. Так и устать недолго, даже спускаясь.'
     j 'Да когда эта лестница уже закончится!\nИ почему так темно!? \nНу уж нет! Я против этой чертовщины! Я должен...'
     scene bg nev 4 with dissolve
     pause 4
-    scene bg nev 3 with dissolve
     'Бездна в которой он оказался, была больше чем он даже мог себе вообразить. Наличие эха не было чем-то что он на самом деле слышал. Его мозг искусственно усиливал эхо, которого тут на самом деле быть не могло, так как звуку не от чего было бы отражаться.'
     scene bg nev 2 with dissolve
     $ renpy.sound.play("sfx/ominous.mp3", channel="sound", loop=False, relative_volume=1)
+    $ renpy.notify("Дом Невидсона.")
     'В этой глотке Дома ему придётся провести немало времени.'
     scene bg blackscreen with slow_fade
     return

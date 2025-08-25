@@ -30,18 +30,23 @@ label start_part2:
     j "Хотя вопрос скорее... {w=0.2}\n{i}\"Когда эту хрущёвку отдадут под снос чтобы у меня больше не было причин откладывать этот момент\"{/i}."
     hide j_jacket
     hide screen note
-    scene bliss with slow_fade
+    scene bg podbezd with slow_fade
     show j_jacket 2 at show_jack_at_right
     $ renpy.music.stop(channel='music', fadeout=0.6)
     $ renpy.sound.play("bg/Glowing_Snow.ogg", channel="music", loop=True, relative_volume=0.2)
 
-    j "Так что ж мне нужно было..."
+    j "Так, что ж мне нужно было..."
 
     hide j_jacket 2 with fade
-
     narrator "Под ногами что-то оказалось, и Джек споткнулся."
 
+<<<<<<< Updated upstream
     j_fast "А-А-А"
+=======
+    # show j_jacket_falling at show_jack_at_right with hpunch
+    j_fast "А-А-А"
+    # hide j_jacket_falling with fade
+>>>>>>> Stashed changes
 
     pause 2
     show j_jacket_sweat at show_jack_at_right with dissolve
@@ -60,7 +65,7 @@ label start_part2:
     j_fast "Охренеть! Он же тут замёрзнет... \n{w=0.5}Не хватало ещё чтобы перед домом кто-то умер!"
     $ renpy.sound.stop(channel='sound', fadeout=5)
     j "Н-но что же мне делать?"
-    scene bliss with dissolve
+    scene bg podbezd with dissolve
     jump what_jack_wil_do_omg
 
 define try_part2_call_an_ambulance = False
@@ -69,7 +74,7 @@ define try_part2_kick_wake_up = False
 define try_part2_ignore = False
 
 label what_jack_wil_do_omg:
-    scene bliss with dissolve
+    scene bg podbezd with dissolve
     menu:
         "Н-но что же мне делать?"
         "Позвонить в скорую" if not try_part2_call_an_ambulance:

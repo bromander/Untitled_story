@@ -1,7 +1,7 @@
 
 label start_part3:
     $ renpy.music.stop(channel='music', fadeout=2)
-    scene bg podbezd with fade
+    scene bg exit with fade
     'Ругаясь под нос на лестницы и тяжесть спасаемого, Джек провернул ключ в двери квартиры, небрежно распахнул её и ввалился в прихожую. Снег, облеплявший одежду и обувь, грязновато-белыми комьями полетел на пол.'
     scene bg exit light_on with dissolve
     $ renpy.music.play("bg/Home.mp3", channel="music", loop=True, relative_volume=0.16, fadein=1)
@@ -22,6 +22,7 @@ label start_part3:
     j 'Интересно, тот человек предпочитает сладкий чай или обычный? \nИли вообще кофе?'
     j 'Впрочем, какая разница...'
     scene bg kitchen light_on with slow_fade
+    $ renpy.sound.play("khe.mp3")
     'Спустя неизвестное количество времени поток мыслей Джека прервал сухой кашель из соседней комнаты.'
     scene bg hall 2 light_on with dissolve
     'Заглянув в комнату, Джек обнаружил, что его невольный гость привстал на локтях и растерянно озирается по сторонам. Вскоре их глаза встретились, и возникла пауза.'
