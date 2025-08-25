@@ -30,7 +30,7 @@ define gui.show_name = True
 
 ## Версия игры.
 
-define config.version = "pre_release_1.0"
+define config.version = "1.1"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными
@@ -134,7 +134,7 @@ default preferences.text_cps = 40
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания,
 ## а от 0 до 30 — вполне допустимый диапазон.
 
-default preferences.afm_time = 10
+default preferences.afm_time = 25
 
 
 ## Директория сохранений #######################################################

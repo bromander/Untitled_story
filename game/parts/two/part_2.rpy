@@ -41,9 +41,7 @@ label start_part2:
 
     narrator "Под ногами что-то оказалось, и Джек споткнулся."
 
-    show j_jacket_falling at show_jack_at_right with hpunch
     j_fast "А-А-А"
-    hide j_jacket_falling with fade
 
     pause 2
     show j_jacket_sweat at show_jack_at_right with dissolve

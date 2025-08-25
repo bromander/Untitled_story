@@ -154,7 +154,6 @@ label tuk_tuk_tuk: #wip
             jump to_do_list
 
         "Нет":
-            $ renpy.music.stop(channel='music', fadeout=5)
             jump to_do_list
     scene bg jopa_room light_on
 
