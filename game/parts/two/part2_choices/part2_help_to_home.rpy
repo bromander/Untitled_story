@@ -8,7 +8,7 @@ label part2_help_to_home:
     'Джек поднял почти полностью обмороженное тело, закинув его руку себе на плечо, и понёс его в дом.'
     $ renpy.music.stop(channel='music', fadeout=2)
     $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True, relative_volume=2)
-    scene bg entrance with fade
+    scene bg entrance 2 with fade
     show j_jacket_angry at show_jack_at_right with dissolve
     'Сколько бы Джек не тыкал кнопки, двери лифта не открывались, а привода не гудели!'
     j_angry 'ДА ТВОЮ МАТЬ! \nЕЩЁ И ЛИФТ НЕ РАБОТАЕТ!'

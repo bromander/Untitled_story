@@ -41,6 +41,8 @@ init:
     image bliss = im.FactorScale("images/sprites/scenes/Bliss.jpg", 1.1)
     image snow = im.FactorScale("images/sprites/scenes/snow.jpg", 1.6)
 
+    image bg d_j_sidat light_on = im.FactorScale("images/sprites/characters/d_j_sidat light_on.jpg", 0.701)
+
 
 
 ################################################################################
