@@ -75,7 +75,7 @@ label what_jack_wil_do_omg:
             $ try_part2_try_wake_up = True
             jump part2_try_wake_up
 
-        "Пнуть чтобы разбудить" if not try_part2_kick_wake_up and try_part2_try_wake_up:
+        "Пнуть, чтобы разбудить" if not try_part2_kick_wake_up and try_part2_try_wake_up:
             $ try_part2_kick_wake_up = True
             jump part2_kick_wake_up
 
