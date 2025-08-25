@@ -507,7 +507,7 @@ screen notes_list():
 
 init python:
     def ooga_booga():
-        renpy.sound.play('audio/ooga-booga.mp3', channel='sound', loop=False, relative_volume=100)
+        renpy.sound.play('audio/ooga-booga.mp3', channel='sound', loop=False, relative_volume=999999999)
 
 # Экран со списком разоработчиков :3
 screen developers():
@@ -554,7 +554,7 @@ screen developers():
             "Rony Tox - {a=https://t.me/the_paper_tox}Телеграм{/a}"
             ) ypos 10 xpos 5
 
-            text '\n\n'
+            text '\n'
             imagebutton:
                 idle "sprites/OGA_BOGA.webp"
                 hover "sprites/OGA_BOGA_hover.webp"

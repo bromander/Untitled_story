@@ -108,6 +108,8 @@ label sigma_masturbistor:
     image sticker10 = "sprites/sigma_masturbistor/sticker10.jpg"
     image sticker11 = "sprites/sigma_masturbistor/sticker11.png"
     image sticker12 = "sprites/sigma_masturbistor/sticker12.jpg"
+    image sticker13 = "sprites/sigma_masturbistor/sticker13.png"
+    image sticker14 = "sprites/sigma_masturbistor/sticker14.png"
 
     init python:
         def play_skala():
@@ -184,7 +186,11 @@ label sigma_masturbistor:
     $ play_skala()
     show sticker12 at random_small_image(*get_randoms())
     pause 1
-
-    ""
+    $ play_skala()
+    show sticker13 at random_small_image(*get_randoms())
+    pause 1
+    $ play_skala()
+    show sticker14 at random_small_image(*get_randoms())
+    pause 1
 
     $ renpy.quit()

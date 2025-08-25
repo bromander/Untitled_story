@@ -37,7 +37,7 @@ label start_part3:
     d_unknown '...кто ты вообще такой? Что это за- где я?'
     hide j_sweat
     show j_1 at show_jack_at_right:
-        zoom 0.3
+        zoom 0.25
     j 'В моей квартире.'
     'Возникла неловкая пауза. У спасённого дёрнулось веко левого глаза.'
     hide j_1
@@ -64,7 +64,7 @@ label start_part3:
     d_unknown 'Я... я не знаю, что сказать.'
     hide j_angry
     show j_2 at show_jack_at_right:
-        zoom 0.3
+        zoom 0.25
     j 'Можешь начать с обычных \"извини\" и \"спасибо\".'
     $ renpy.sound.play("audio/sigma_masturbistor/vine-boom.mp3", channel="sound", loop=False, relative_volume=0.5, fadeout=0.5)
     hide d
@@ -79,7 +79,7 @@ label start_part3:
     d_unknown 'Так и... ещё раз, кто ты?'
     hide j_2
     show j_3 at show_jack_at_right:
-        zoom 0.3
+        zoom 0.25
     j 'Звать Джек. А ты?'
     $ renpy.sound.play("audio/sigma_masturbistor/vine-boom.mp3", channel="sound", loop=False, relative_volume=0.5, fadeout=0.5)
     hide d_wipes_face
@@ -89,7 +89,7 @@ label start_part3:
     d  '...Дебилыч'
     hide j_3
     show j_1 at show_jack_at_right:
-        zoom 0.3
+        zoom 0.25
     j 'Э? \nЧто это за имя такое?'
     $ renpy.sound.play("audio/sigma_masturbistor/vine-boom.mp3", channel="sound", loop=False, relative_volume=0.5, fadeout=0.5)
     hide d
