@@ -18,6 +18,7 @@ init:
 
     image bg bathroom = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom.jpg", 0.5325)
     image bg bathroom light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom light_on.jpg", 0.5325)
+    image mirror_handler = im.FactorScale("images/sprites/scenes/jopa_home/mirror_handler.jpg", 0.5325)
     image bg bathroom bath = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom bath.png", 0.5325)
     image bg bathroom cleared = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared.jpg", 0.5325)
     image bg bathroom cleared light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg bathroom cleared light_on.jpg", 0.5325)
@@ -36,6 +37,9 @@ init:
 
     image bg exit = im.FactorScale("images/sprites/scenes/jopa_home/bg exit.jpg", 0.5325)
     image bg exit light_on = im.FactorScale("images/sprites/scenes/jopa_home/bg exit light_on.jpg", 0.5325)
+
+    image bliss = im.FactorScale("images/sprites/scenes/Bliss.jpg", 1.1)
+    image snow = im.FactorScale("images/sprites/scenes/snow.jpg", 1.6)
 
 
 

@@ -2,7 +2,6 @@
 label start:
     $ quick_menu = False
     scene bg tutor 1
-    show 111
     $ renpy.pause()
     scene bg tutor 2
     $ renpy.pause()

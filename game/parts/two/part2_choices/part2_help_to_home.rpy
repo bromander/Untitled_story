@@ -1,7 +1,7 @@
 
 
 label part2_help_to_home:
-    scene bg entrance porch
+    scene bliss with dissolve
     hide j_jacket_scared with dissolve
     show j_jacket 3 at show_jack_at_right with dissolve
     j "Делать нечего, придётся помогать."

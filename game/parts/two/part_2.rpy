@@ -7,6 +7,12 @@ transform show_jack_at_right:
     xzoom -1
 
 
+transform debil_transform:
+    yalign 0.5
+    xalign 0.5
+    zoom 1.2
+
+
 label start_part2:
     scene bg entrance light_on with fade
     $ renpy.music.play("bg/entrance/noise.ogg", channel="music", loop=True, relative_volume=2)
@@ -24,7 +30,7 @@ label start_part2:
     j "Хотя вопрос скорее... {w=0.2}\n{i}\"Когда эту хрущёвку отдадут под снос чтобы у меня больше не было причин откладывать этот момент\"{/i}."
     hide j_jacket
     hide screen note
-    scene bg entrance porch with slow_fade
+    scene bliss with slow_fade
     show j_jacket 2 at show_jack_at_right
     $ renpy.music.stop(channel='music', fadeout=0.6)
     $ renpy.sound.play("bg/Glowing_Snow.ogg", channel="music", loop=True, relative_volume=0.2)
@@ -40,21 +46,23 @@ label start_part2:
     hide j_jacket_falling with fade
 
     pause 2
-
     show j_jacket_sweat at show_jack_at_right with dissolve
     j_fast "Твою мать!{w=0.5} Кто это?"
     hide j_jacket_sweat with dissolve
     narrator "Джек поднялся на ноги и рассмотрел тело внимательней."
+
+    scene snow with dissolve
+    show deb_in_snow at debil_transform
 
     narrator "То было тело человека ещё живого, судя по наличию у него дыхания... \n{w=1.0} и пьяного.. {w=0.3}судя по его запаху..."
     narrator "Самым пугающим было скорее то, что он был одет не по погоде. \n{w=0.3}Если слово \"одет\" тут вообще применимо. Учитывая погоду."
     narrator "Пара сланцев, шорты, да дебильная футболка. {w=0.3}Ну и неряшливый вид немытых длинных волос наводит не на самые приятные мысли о его состоянии."
     narrator "Хуже было только то, что он был бледный и холодный и то,\n что он близок к обморожению."
 
-    show j_jacket_scared with dissolve
     j_fast "Охренеть! Он же тут замёрзнет... \n{w=0.5}Не хватало ещё чтобы перед домом кто-то умер!"
     $ renpy.sound.stop(channel='sound', fadeout=5)
     j "Н-но что же мне делать?"
+    scene bliss with dissolve
     jump what_jack_wil_do_omg
 
 define try_part2_call_an_ambulance = False
@@ -63,8 +71,7 @@ define try_part2_kick_wake_up = False
 define try_part2_ignore = False
 
 label what_jack_wil_do_omg:
-    show j_jacket_scared with dissolve
-    scene bg entrance porch
+    scene bliss with dissolve
     menu:
         "Н-но что же мне делать?"
         "Позвонить в скорую" if not try_part2_call_an_ambulance:
@@ -72,6 +79,8 @@ label what_jack_wil_do_omg:
             jump part2_call_an_ambulance
 
         "Попытаться разбудить" if not try_part2_try_wake_up:
+            scene snow with dissolve
+            show deb_in_snow at debil_transform
             $ try_part2_try_wake_up = True
             jump part2_try_wake_up
 

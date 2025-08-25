@@ -178,6 +178,25 @@ label scroll_tour:
     "Джек выключил экран телефона, откинулся на спинку дивана и тяжело вздохнул."
     jump to_do_list
 
+screen show_random_mirror:
+    add 'sprites/bg blackscreen.png'
+    key "mouseup_1" action Hide("show_random_mirror")
+    key "K_ESCAPE" action Hide("show_random_mirror")
+    modal True
+    $ _reflection = renpy.random.randint(1, 6)
+    add f"sprites/scenes/jopa_home/reflections/reflect {_reflection}.png"
+
+
+
+screen bathroom_mirror:
+    imagebutton:
+        xpos 1030
+        ypos 80
+        idle "sprites/scenes/jopa_home/mirror_handler.jpg"
+        mouse 'wow'
+        action Show("show_random_mirror")
+
+
 label reflect_room:
     scene bg bathroom light_on
     "Где-то за стеной шумит вода, льющаяся по трубам. Воздух немного влажный, но в нём нет кислого запаха плесени. Стало быть, регулярная чистка даёт свои плоды."
@@ -189,6 +208,7 @@ label reflect_room:
     "Затем в ход идёт сухой край полотенца для рук. Скрип немного громче, а следом остаётся лишь кристально чистая поверхность."
     $ renpy.sound.stop(channel='sound')
     scene bg bathroom cleared light_on #временно?
+    show screen bathroom_mirror
     #{фон: чистое зеркало над раковиной, блик закрывает отражение} Я ОТРИСУЮ
     #{Всплывающее уведомление Ren’Py: С некоторыми объектами можно взаимодействовать.}
     if not notinoti:
@@ -198,6 +218,7 @@ label reflect_room:
     "Джек окидывает взглядом своё отражение."
     j "Ну, в целом даже ничего так!"
     "Получив удовлетворение от возвращения зеркалу качества Full HD, Джек покидает ванную комнату."
+    hide screen bathroom_mirror
     jump to_do_list
 
 label go_out_for:

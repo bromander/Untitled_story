@@ -6,6 +6,12 @@
 
 define config.default_textshader = "typewriter"
 
+
+# Мышка
+define config.mouse = {}
+define config.mouse['wow'] = [ ("gui/mouse/cur_star.png", 0, 0) ]
+
+
 ## Основное ####################################################################
 
 ## Читаемое название игры. Используется при установке стандартного заголовка

@@ -364,10 +364,10 @@ screen note(note_name, _xpos, _ypos):
     if note_name not in persistent.notes_counter:
         imagebutton:
             idle "sprites/note_button/idle.png"
-            hover "sprites/note_button/hover.png"
             xpos _xpos ypos _ypos
             at note_zoomed
             focus_mask True
+            mouse 'wow'
             action Show("show_note", note_name=note_name)
 
 
